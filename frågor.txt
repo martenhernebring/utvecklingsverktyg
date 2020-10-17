@@ -11,4 +11,17 @@ Ge gärna exempel på de kommandon du använder för att göra detta och vissa a
 vilken output du fick från git-kommandona.
 Tips: Gör exemplen med att backa i en branch så att master fortfarande är korrekt. 
 
-5. 
+1. Add använder man först för att lägga till filer eller allt som inte ignoreras (med .) så man vet vad som ska commitas.
+Efter "git add" så kan man göra "commit -m "<meddelande>"" för att lägga till ändringar lokalt.
+2. Git pull använder man när man börjar jobba för att få de senaste filerna från repo.
+Git push använder man efter commit för att lägga in sina senaste ändringar så andra får tillgång till dem via repon.
+3. Log används för att se alla sina ändringar och status används för att se vad man behöver göra härnäst.
+4. Commit-meddelande ska beskriva varför man gör vissa saker helst eller vilka ändringar om man följer direktiv.
+5. Man gå tillbaka till tidigare tillstånd genom "git checkout", "git revert" eller "git reset".
+"git checkout" använder man nästan jämnt så man kan se vad man gjorde fel tidigare.
+Om man istället ta bort felet med ny commit så kan man istället använda "git revert" eller "git reset"
+"git revert" behåller felet synligt i "git log" medans "git reset" tar bort felet så att det inte syns. 
+Exempel: När jag var i "3a0a40c" behövde jag gå tillbaka till den första branchen "236ab28" 
+för att kolla hur Nahids ursprungliga mall så ut så jag inte hade gjort några stora ändringar.
+Planen var att gå tillbaka och kopiera texten i Notepad så jag kan jämföra.
+Jag skrev då "git checkout 236ab28git"
