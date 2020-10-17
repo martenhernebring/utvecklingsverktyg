@@ -1,8 +1,10 @@
 #!/bin/bash
 #Uppgift 4 - Skapa ett skript run_game.sh
+NAME=Marten_Hernebring
 #1. Skriva ut ert namn
-echo Marten_Hernebring_labb
-#2. Skapa en katalog med ert namn och suffixet _labb i mitt fall blir katalogen Nahid_Vafaie_labb använd _ (underscore) i stället för mellanslag!
+echo "$NAME"s program
+#2. Skapa en katalog med ert namn och suffixet _labb 
+mkdir "$NAME"_labb
 #3. Kopiera alla java-filer till katalogen
 #4. Byt katalog i skriptet till katalogen ovan (den katalog som beskrevs i texten ovanför)
 #5. Skriv ut aktuell katalog med pwd för att jag ska se att ni lyckats skapa och byta katalog
