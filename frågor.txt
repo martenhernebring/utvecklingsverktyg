@@ -1,0 +1,14 @@
+Steg 5- frågor.txt
+Mål- Jag siktar på VG.
+
+1. När använder man add respektive commit?
+2. Vad är pull repektive push?
+3. När använder man log respektive status?
+4. Hur kan man formulera sig i sina commit-meddelanden?
+5. Det finns flera sätt att rulla tillbaka koden till ett tidigare tillstånd. 
+Förklara skillnaden och motivera när man skulle använda den ena eller andra metoden. 
+Ge gärna exempel på de kommandon du använder för att göra detta och vissa att det fungerar, 
+vilken output du fick från git-kommandona.
+Tips: Gör exemplen med att backa i en branch så att master fortfarande är korrekt. 
+
+5. 
