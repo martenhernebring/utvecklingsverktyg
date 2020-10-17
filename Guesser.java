@@ -2,7 +2,7 @@
  * An engine that ask the player which number he is thinking about
  * 
  * @author Marten Hernebring, Nahid Vafaie
- * @version 1.2
+ * @version 1.3
  * @since 1.0
  *        <p>
  *        Assignment 1 - About Java-class Guesser 1. Communicates with the
@@ -69,15 +69,7 @@ public class Guesser {
         System.out.println("Please answer T for true, and F for false.\n");
     }
 
-    /*
-     * FROM DOCUMENT: Denna metod är väldigt enkel, du ska bara göra två metodanrop.
-     * Oavsett så ska du commita denna enkla ändring när du verifierat att det
-     * fungerar. För att testa att start metoden fungerar, gå tillbaka till main och
-     * anropa start på den instans du skapade i steg 1. Kompilera main-klassen igen
-     * och kör den. Om ni lyckats kommer spelet att gå klart utan att du som
-     * användare hinner svara på några frågor. Det ska vi fixa i nästa steg. Commita
-     * även GuessingGame.java och pusha så är detta steg klart. END FROM DOCUMENT
-     * 
+    /* 
      * * Task 3. Complete the code for the getReply() method. In the current version
      * below, it returns null each call, which is not what this method is supposed
      * to do.
@@ -97,30 +89,30 @@ public class Guesser {
     private void doGuesses() {
         int i = 0; // number of guesses
         int middle = 0;
-        while (low < high) { 
-            // Set next guess to the middle between 
-            // current low and current high 
+        while (low < high) {
+            // Set next guess to the middle between
+            // current low and current high
             middle = low + (high - low) / 2;
             System.out.println("Is the number less than or equal to " + middle + "?");
             String reply = getReply();
-            if ("T".equals(reply)) { 
-                // The number is less than or equal to middle 
+            if ("T".equals(reply)) {
+                // The number is less than or equal to middle
                 // so we move down high to middle
                 high = middle;
-            } else { 
-                // The number is greater than middle, 
+            } else {
+                // The number is greater than middle,
                 // so we move up low to middle +1
                 low = middle + 1;
             }
             i++; // One more guess!
         }
         // When low has met high, we don't enter the loop
-        // and we have found the number answer(low, i);
+        // and we have found the number
+        answer(low, i);
     }
-    
-     private void answer(int guess, int numberOfGuesses) {
-     System.out.println("You were thinking about " + guess 
-        + " (took me " + numberOfGuesses + " guesses)"); 
+
+    private void answer(int guess, int numberOfGuesses) {
+        System.out.println("You were thinking about " + guess + " (took me " + numberOfGuesses + " guesses)");
     }
-    
+
 }

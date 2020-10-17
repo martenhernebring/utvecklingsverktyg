@@ -2,7 +2,7 @@
  * A game that creates an engine Guesser for finding out numbers using terminal
  * 
  * @author Marten Hernebring, Nahid Vafaie
- * @version 1.0
+ * @version 1.1
  * @since 1.0
  *        <p>
  *        Steg 1- Continuation - Created main method of GuessingGame.java with
@@ -22,6 +22,7 @@ public class GuessingGame {
      */
     public static void main(String[] args) {
         Guesser guesser = new Guesser(0, 1000);
-        System.out.println(guesser);
+        //System.out.println(guesser); for checking the constructor
+        guesser.start();
     }
 }
