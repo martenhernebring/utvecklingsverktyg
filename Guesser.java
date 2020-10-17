@@ -1,18 +1,12 @@
+import java.util.Scanner;
+
 /**
  * An engine that ask the player which number he is thinking about
  * 
  * @author Marten Hernebring, Nahid Vafaie
- * @version 1.3
+ * @version 1.4
  * @since 1.0
- *        <p>
- *        Assignment 1 - About Java-class Guesser 1. Communicates with the
- *        player who will think of a number and answer questions 2. Tries to ask
- *        the right questions for finding the number
- *        </p>
- *        <p>
- *        Assignment 1 -continuation Added GuessingGame.java to Github with
- *        message “adding main class, added toString-method in constructor”.
- *        </p>
+ *
  */
 public class Guesser {
     /** Lowest integer instance variable */
@@ -56,6 +50,10 @@ public class Guesser {
      * Task 2. Complete the start() method, so that in the method body, you call
      * first the rules() method, next the doGuesses() method.
      */
+    /**
+     * A simple start method that will start the game and call the two methods
+     * rules() and doGuesses()
+     */
     public void start() {
         // call the rules method here
         rules();
@@ -63,13 +61,17 @@ public class Guesser {
         doGuesses();
     }
 
+    /**
+     * A simple method for outprinting the rules to the terminal about lowest and
+     * highest numbers and correct inputs
+     */
     private void rules() {
         System.out.println("Think of a number between " + low + " and " + high);
         System.out.println("I'm going to ask a few questions in order " + "to guess the number.");
         System.out.println("Please answer T for true, and F for false.\n");
     }
 
-    /* 
+    /*
      * * Task 3. Complete the code for the getReply() method. In the current version
      * below, it returns null each call, which is not what this method is supposed
      * to do.
@@ -78,14 +80,27 @@ public class Guesser {
      * it is "T" or "F", we have a valid reply. Return the String that you read from
      * the player.
      */
+
+    /**Using standard scanner until answer method is called */
+    final static Scanner SCAN = new Scanner(System.in);
+
+    /**Ask the user to reply to the question with only T or F acceptable (spaces are OK!)
+     * @return String with "T" or "F"
+     */
     private String getReply() {
-        String reply = null; // Write code here which reads a String from the console.
+        // Write code here which reads a String from the console.
+        String reply = SCAN.nextLine().trim();
         // As long as it is not a valid reply (one of "T" and "F")
         // write an error message, and read a new reply.
+        while (!reply.equals("T") & !reply.equals("F")) {
+            System.out.println("please answer T or F");
+            reply = SCAN.nextLine().trim();
+        }
         // When you have gotten a valid reply, return it.
         return reply;
     }
 
+    //The computer will guess the number in the middle every time until right answer is found internal method
     private void doGuesses() {
         int i = 0; // number of guesses
         int middle = 0;
@@ -111,7 +126,9 @@ public class Guesser {
         answer(low, i);
     }
 
+    //Internal method used when the number was found and the game ends
     private void answer(int guess, int numberOfGuesses) {
+        SCAN.close(); //Scanner is not needed any more
         System.out.println("You were thinking about " + guess + " (took me " + numberOfGuesses + " guesses)");
     }
 
