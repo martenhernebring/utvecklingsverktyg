@@ -11,10 +11,17 @@ cp *.java "$CAT"
 #4. Byt katalog i skriptet till katalogen ovan (den katalog som beskrevs i texten ovanför)
 cd "$CAT"
 #5. Skriv ut aktuell katalog med pwd för att jag ska se att ni lyckats skapa och byta katalog
-pwd
+echo "Running game from $(pwd)"
 #6. skriv ut att ni ska kompilera- kompilera
+echo "compiling..."
+javac GuessingGame.java
 #7. Skriv ut att ni kör programmet (“Running game…”)- kör programmet
+echo "running..."
+java GuessingGame
 #8. Skriv ut att programmet är färdigt (“Done”)
+echo "Done!"
 #9. Ta bort alla class-filer
+echo "Removing class files..."
+rm *.class
 #10. Lista katalogen så att jag kan se att class-filerna är borta
 ls
